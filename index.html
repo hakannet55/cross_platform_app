@@ -1,1 +1,831 @@
-https://github.com/hakannet55/cross_platform_app
+<!DOCTYPE html>
+<html lang="tr">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Ün Okulları">
+<link rel="shortcut icon" type="image/x-icon" href="../data/img/logo.ico">
+<title>Ün Okulları</title>
+
+<meta name="author" content="hakannet55">
+<meta name="MobileOptimized" content="320">
+<meta name="HandheldFriendly" content="True">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Php Yazılım">
+<meta http-equiv="cleartype" content="on">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="data/css/normalizer.css">
+	<link rel="stylesheet" href="data/css/reset.css">
+	<link rel="stylesheet" href="data/css/w3.css">
+	<link rel="stylesheet" href="data/css/font-awesome.min.css">
+	<link rel="stylesheet" href="data/css/bootstrap3.css">
+
+	
+	<script src="data/js/jquery_2min.js"></script>
+	
+	<script src="data/js/bootstrap.min.js"></script>
+	<script src="data/js/bootstrap-datepicker.min.js"></script>
+	<script src="data/js/base64.js"></script>
+	<link rel="stylesheet" href="data/css/bootstrap-datepicker3.min.css">
+	<link rel='stylesheet' rel='stylesheet' media='print' href='data/css/print.css' >
+
+<script>
+$.fn.datepicker.dates.tr={days:["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"],daysShort:["Pz","Pzt","Sal","Çrş","Prş","Cu","Cts"],daysMin:["Pz","Pzt","Sa","Çr","Pr","Cu","Ct"],months:["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"],monthsShort:["Oca","Şub","Mar","Nis","May","Haz","Tem","Ağu","Eyl","Eki","Kas","Ara"],today:"Bugün",clear:"Temizle",weekStart:1,format:"dd.mm.yyyy"};
+</script>
+<style>
+html,body{font-family: Arial, Helvetica, sans-serif;}
+html{overflow-x:hidden}
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+body{background:rgb(245,245,245);}
+.w3-top{background:rgb(226,230,230);border-bottom:2px solid gray;}
+.w3-logo{	margin:0;}
+.event_d{background:rgb(250,250,152)!important;color:black!important;}
+.def_image_1{width:75px;height:auto;display:block;padding:5px;margin:2px;float:right;}
+.w3-hide{display:none;}
+.w3-inline{
+	display:inline-block!important;
+}
+#myBtn,#myBtn2 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 60px; /* Place the button at the bottom of the page */
+    right: 10px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgba(250,100,100,0.77); /* Set a background color */
+    color:white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    border-radius: 5px; /* Rounded corners */
+	border:2px solid lightgrey;
+	font-weight:bold;
+	width:50px;heigth:52px;
+}
+#myBtn2{
+    bottom: 10px; /* Place the button at the bottom of the page */
+    right: 10px; /* Place the button 30px from the right */
+}
+#myBtn:hover,#myBtn2:hover {
+    background-color: red; /* Add a dark-grey background on hover */
+}
+.w3-float-1{float:right!important;}
+.w3-float-2{float:left!important;}
+.w3-margin-1{margin:2px!important;}
+.w3-margin-2{margin:4px!important;}
+.w3-margin-3{margin:8px!important;}
+.w3-margin-4{margin:10px!important;}
+.w3-margin-5{margin:12px!important;}
+.w3-padding-1{padding:2px!important;}
+.w3-padding-2{padding:4px!important;}
+.w3-padding-3{padding:8px!important;}
+.w3-padding-4{padding:10px!important;}
+.w3-padding-5{padding:12px!important;}
+.w3-padding{padding:12px!important;}
+.w3-margin{margin:12px!important;}
+.w3-cursor-default:hover{cursor:default;}
+.w3-cursor-pointer:hover{cursor:pointer;}
+iframe:focus { 
+    outline: none;
+}
+
+iframe{ 
+    display: block;
+	width:99%;
+}
+.svg_back{
+  background-image: url('../data/svg/bg.svg');
+  background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: cover;
+}
+
+a:hover, a:visited, a:link, a:active{text-decoration:none;}
+
+.buyuk_scroll::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+.buyuk_scroll::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+	height: 60px;
+}
+.buyuk_scroll::-webkit-scrollbar
+{
+	width:32px;
+	height: 40px;
+	background-color: #F5F5F5;
+}
+.back1{
+	background-image:url("/images/chat_back.jpg");
+
+}
+.def_image{width:80px;height:80px;}
+.no_pointer{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	cursor:default;
+}
+#modal_overlay,#ara_box_overlay{display:none;background:rgba(120,120,120,0.5);position:fixed;width:100vw;height:100vh;margin:auto;left:0px;top:0px;z-index:15453;}
+#ara_box_overlay{background:rgba(200,200,200,0.5);}
+#loading_anim{
+	background-image:url("../data/gif/ajax-loader.gif");width:6vw;height:6vw;background-size: 100% 100%!important;
+	position:fixed;z-index:51888;margin:auto;left:0px;top:0px;right:0px;bottom:0px;background-repeat: no-repeat;
+	display:none;
+}
+.golge{
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    -webkit-box-shadow:  1 2px 5px rgba(155, 155, 155, 0.5), 0 1px 0 rgba(155, 155, 155, 0.5);
+    box-shadow:  0 2px 5px rgba(155, 155, 155, 0.5), 0 1px 0 rgba(155, 155, 155, 0.5)
+}
+#loading_animloader {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 100px auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load4 1.3s infinite linear;
+  animation: load4 1.3s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+#tmp_calendar_modal_div1{
+	display:block!important;
+	width:100%!important;
+	text-align:center;
+}
+#tmp_calendar_modal_div1 .w3-card,#tmp_calendar_modal_div1 #datetimepicker12{
+	display:table-cell!important;
+	height:auto;
+	width:50%;
+	min-width:180px;
+	margin:0;left:0;right:0;bottom:0;top:0;
+	position:relative;
+	float:none;
+}
+.w3_finder_overlay{
+	margin:0;left:0;right:0;bottom:0;top:0;
+	position:fixed;
+	width:100%;
+	height:100%;
+	background:rgba(50,50,50,0.65);
+	z-index:1;
+}
+.w3-top .w3-bar div button span,.w3-top .w3-bar a{font-size:1.1em;}
+
+
+@-webkit-keyframes load4{0%,100%{box-shadow:0 -3em 0 .2em,2em -2em 0 0,3em 0 0 -1em,2em 2em 0 -1em,0 3em 0 -1em,-2em 2em 0 -1em,-3em 0 0 -1em,-2em -2em 0 0}12.5%{box-shadow:0 -3em 0 0,2em -2em 0 .2em,3em 0 0 0,2em 2em 0 -1em,0 3em 0 -1em,-2em 2em 0 -1em,-3em 0 0 -1em,-2em -2em 0 -1em}25%{box-shadow:0 -3em 0 -.5em,2em -2em 0 0,3em 0 0 .2em,2em 2em 0 0,0 3em 0 -1em,-2em 2em 0 -1em,-3em 0 0 -1em,-2em -2em 0 -1em}37.5%{box-shadow:0 -3em 0 -1em,2em -2em 0 -1em,3em 0 0 0,2em 2em 0 .2em,0 3em 0 0,-2em 2em 0 -1em,-3em 0 0 -1em,-2em -2em 0 -1em}50%{box-shadow:0 -3em 0 -1em,2em -2em 0 -1em,3em 0 0 -1em,2em 2em 0 0,0 3em 0 .2em,-2em 2em 0 0,-3em 0 0 -1em,-2em -2em 0 -1em}62.5%{box-shadow:0 -3em 0 -1em,2em -2em 0 -1em,3em 0 0 -1em,2em 2em 0 -1em,0 3em 0 0,-2em 2em 0 .2em,-3em 0 0 0,-2em -2em 0 -1em}75%{box-shadow:0 -3em 0 -1em,2em -2em 0 -1em,3em 0 0 -1em,2em 2em 0 -1em,0 3em 0 -1em,-2em 2em 0 0,-3em 0 0 .2em,-2em -2em 0 0}87.5%{box-shadow:0 -3em 0 0,2em -2em 0 -1em,3em 0 0 -1em,2em 2em 0 -1em,0 3em 0 -1em,-2em 2em 0 0,-3em 0 0 0,-2em -2em 0 .2em}}@keyframes load4{0%,100%{box-shadow:0 -3em 0 .2em,2em -2em 0 0,3em 0 0 -1em,2em 2em 0 -1em,0 3em 0 -1em,-2em 2em 0 -1em,-3em 0 0 -1em,-2em -2em 0 0}12.5%{box-shadow:0 -3em 0 0,2em -2em 0 .2em,3em 0 0 0,2em 2em 0 -1em,0 3em 0 -1em,-2em 2em 0 -1em,-3em 0 0 -1em,-2em -2em 0 -1em}25%{box-shadow:0 -3em 0 -.5em,2em -2em 0 0,3em 0 0 .2em,2em 2em 0 0,0 3em 0 -1em,-2em 2em 0 -1em,-3em 0 0 -1em,-2em -2em 0 -1em}37.5%{box-shadow:0 -3em 0 -1em,2em -2em 0 -1em,3em 0 0 0,2em 2em 0 .2em,0 3em 0 0,-2em 2em 0 -1em,-3em 0 0 -1em,-2em -2em 0 -1em}50%{box-shadow:0 -3em 0 -1em,2em -2em 0 -1em,3em 0 0 -1em,2em 2em 0 0,0 3em 0 .2em,-2em 2em 0 0,-3em 0 0 -1em,-2em -2em 0 -1em}62.5%{box-shadow:0 -3em 0 -1em,2em -2em 0 -1em,3em 0 0 -1em,2em 2em 0 -1em,0 3em 0 0,-2em 2em 0 .2em,-3em 0 0 0,-2em -2em 0 -1em}75%{box-shadow:0 -3em 0 -1em,2em -2em 0 -1em,3em 0 0 -1em,2em 2em 0 -1em,0 3em 0 -1em,-2em 2em 0 0,-3em 0 0 .2em,-2em -2em 0 0}87.5%{box-shadow:0 -3em 0 0,2em -2em 0 -1em,3em 0 0 -1em,2em 2em 0 -1em,0 3em 0 -1em,-2em 2em 0 0,-3em 0 0 0,-2em -2em 0 .2em}}
+@media screen and (max-width: 565px) {
+	h4,h1,h2,h3{
+	   display:block!important;
+	   text-align:center!important;
+        font-size:1.15em!important;
+		font-weight:normal!important;
+		padding:10px!important;
+		margin:2px!important;
+	}
+	.w3-button,.w3-padding,w3-padding-4,.w3-margin,.w3-margin-4{
+		font-size:0.91em!important;padding:5px!important;padding-left:5px!important;padding-right:5px!important;margin:3px!important;
+		}
+	.w3-button{padding-top:8px;padding-bottom:8px;}
+	.w3-s-block{display:block!important;width:100%!important;}
+	.w3-dropdown-content{font-size:1.33em;}
+	#tmp_calendar_modal_div1 .w3-card,#tmp_calendar_modal_div1 #datetimepicker12{
+		display:block!important;
+		position:relative!important;
+		float:none!important;
+		height:auto;width:auto;
+		min-width:auto;min-height:auto;
+		border: 0;
+		border: none;
+		border-width: 0;
+		border-style: none;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		overflow:hidden;
+	}
+	.w3-modal-content,.modal-body,.container-fluid,#modal_content{
+		margin:0;padding:0;padding-left:2px;padding-right:2px;;
+		}
+	table tbody td{padding:1px!important;}
+	.xwidget div div table{width:100%!important;display:block!important;}
+	.w3-top .w3-bar a fa{font-size:2em;}
+	.w3-top .w3-bar a{font-size:0.5em;}
+}
+.w3-golge-1{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.w3-golge-2{
+  box-shadow: 0 3px 5px rgba(0,0,0,0.4), 0 1px 5px rgba(0,0,0,0.4);
+}
+.w3-golge-3{
+	  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+@media screen and (min-width: 525px) {
+	.fa,.w3-top .w3-bar a .fa{
+		font-size:1.39em!important;
+	}
+	.w3-dropdown-content{font-size:1.1em;}
+}
+@media screen and (max-width: 699px) {
+	.xwidget div div table tbody tr td{
+		width:11%!important;
+	}
+	.xwidget div div table tbody tr td{font-size:0.9em!important;}
+	.w3-container,.panel,.panel-default,.w3-padding,.w3-padding-4,.w3-padding-3,.w3-padding-2{padding-left:1px!important;padding-right:1px!important;}
+	table,table tbody tr td,table thead tr th{padding:1px;margin:0;font-size:0.88em;font-weight:normal;}
+	td div.btn{padding:2px;margin:0;display:block;width:90%;}
+	.w3-dropdown-content{font-size:1.23em!important;}
+	
+	.w3-top .w3-bar div .w3-button span{font-size:1px!important;}
+	.w3-top .w3-bar div .w3-button .fa,.w3-top .w3-bar-item .fa,.w3-top .w3-bar a,.w3-top .w3-bar a .fa{
+		font-size:1.2em!important;
+	}
+	.w3-top .w3-bar a .fa{font-size:1.8em!important;}
+	.w3-top .w3-bar a{font-size:0.75em!important;}
+}
+</style>
+
+
+<script>
+String.prototype.hexEncode = function(){var hex,i;var result = "";for(i=0;i<this.length;i++){ hex = this.charCodeAt(i).toString(16);result += ("000"+hex).slice(-4);}return result}
+String.prototype.hexDecode = function(){var j;var hexes = this.match(/.{1,4}/g) || [];var back = "";for(j = 0; j<hexes.length; j++) {back += String.fromCharCode(parseInt(hexes[j], 16));}return back;}
+String.prototype.turkishToUpper = function(){
+var string = this;
+var letters = { "i": "İ", "ş": "Ş", "ğ": "Ğ", "ü": "Ü", "ö": "Ö", "ç": "Ç", "ı": "I" };
+string = string.replace(/(([iışğüçö]))/g, function(letter){ return letters[letter]; })
+return string.toUpperCase();
+}
+
+String.prototype.turkishToLower = function(){
+var string = this;
+var letters = { "İ": "i", "I": "ı", "Ş": "ş", "Ğ": "ğ", "Ü": "ü", "Ö": "ö", "Ç": "ç" };
+string = string.replace(/(([İIŞĞÜÇÖ]))/g, function(letter){ return letters[letter]; })
+return string.toLowerCase();
+}
+Array.prototype.randomDiffElement=function(t){
+	if(0!=this.length){
+		if(1==this.length)return this[0];
+		var h=0;do h=Math.floor(Math.random()*this.length);while(this[h]==t);
+		return this[h];
+	}
+};
+
+function clear_xhr(){
+	try{xhr.abort();}catch(e){}
+$.xhrPool = [];
+$.xhrPool.abortAll = function() {
+    $(this).each(function(idx, jqXHR) {
+        jqXHR.abort();
+    });
+    $(this).each(function(idx, jqXHR) {
+        var index = $.inArray(jqXHR, $.xhrPool);
+        if (index > -1) {
+            $.xhrPool.splice(index, 1);
+        }
+    });
+};
+$.ajaxSetup({
+    beforeSend: function(jqXHR) {
+        $.xhrPool.push(jqXHR);
+    },
+    complete: function(jqXHR) {
+        var index = $.inArray(jqXHR, $.xhrPool);
+        if (index > -1) {
+            $.xhrPool.splice(index, 1);
+        }
+    }
+});
+}
+function datepicker(){
+	$('.datapicker').datepicker({
+		'todayHighlight': true,'autoclose': true,'language': 'tr','weekStart': 1,'maxViewMode': 2,
+		'todayBtn': true,'multidate': false,'daysOfWeekHighlighted': "0,6"
+	});
+}
+function msg(e){modal_ac('',e);modal_mod3();}
+function msg_(e){modal_ac('',e);modal_mod2();}
+function yenile_(){window.location.reload();}
+function uyar(e){modal_ac('',e);modal_mod1();}
+function hash_uygula(e){e=e.substring(1,e.length);page_git(e);}
+function loading_ac(){$("#loading_anim").show();$('#ara_box_overlay').show();}
+function loading_kapat(){clear_xhr();$("#loading_anim").hide();$('#ara_box_overlay').hide();}
+function load_ekle(){$("#content").html("<center><h1>Loading....</h1><i class='fa fa-spinner fa-spin fa-3x fa-fw'></i></center>");}
+function message_kapat(){$('.message').hide();}
+function open_w(e){window.open(e, "MsgWindow", "width="+$(window).width()/1.12+",height="+$(window).height()/1.21);}
+function open_w_ufak(e){window.open(e, "MsgWindow", "width="+$(window).width()/1.8+",height="+$(window).height()/1.7);}
+function modal_ac(e,ee){$("#modal").show();$("#modal_head").html(e);$("#modal_content").html(ee);}
+function modal_load(url){$("#modal_content").load(url);}
+function modal_kapat(){$("#modal,#modal_overlay").hide();$("#modal_head").html('');$("#modal_content").html('');}
+function modal_mod1(){$("#modal .modal-footer").hide();}
+function modal_mod2(){
+	$("#modal,#modal_content").css({'margin':'auto','height':'200px','left':'0','top':'0','position':'absolute','right':'0','bottom':'0','overflow-x':'hidden','overflow-y':'hidden'});
+	$("#modal,.modal-content,#modal_content,.w3-modal-content,.modal-body").css({'background':'rgb(240,252,243)','color':'black'});//'background':'#acf0e1','opacity':'0.5'
+	$("#modal,.modal-content").css({'background':'none'});
+	$("body").html("<div style='background:rgb(255,231,231);padding:20px;margin:auto;left:0;top:0;bottom:0;right:0;position:fixed;width:100vw;height:100vh;'><center><p style='color:rgb(110,110,110);tex-align:center;font-size:1.5em;'>Yükleniyor...</p><div id='loading_animloader'  style='display:block!important;' ></div></center></div>");
+
+	$(".modal-footer,.modal-header,button").hide();
+	$('.modal-body').html('<h3>'+$('#modal_content').text()+'</h3>');
+	setTimeout(function(){
+		modal_kapat();
+		$('.modal-header').show();
+		yenile_();
+	},450);
+}
+function modal_mod3(){
+	$(".modal-footer,.modal-header").hide();
+	setTimeout(function(){modal_kapat();},1550);
+}
+function modal_size1(){
+	$(".modal-body").css({'width':'99vw'});
+}
+
+function print_div(ee){
+	$(ee).find('a').remove();
+	modal_mod1();
+	$('.modal-body').css({'min-height':'100%','max-height':'100%','height':'100%'});//,'overflow-y':'hidden'
+	var old=$(ee).clone();
+	var htmx=$('body').html();
+	$("body").html(old);
+	window.print();
+	$("body").html(htmx);
+	modal_kapat();$('#arabox,#arabox_overlay').hide();$('input[name=ara]').val('');
+
+}
+
+function print_div_table(ee){
+	var style="";
+	$('div').attr('onclick','');
+	$('script').html('');
+	$('body').css({'font-size':'0.80em'});
+	var old=$(ee).html();
+	var html=$('body').html();
+	var head='';
+	$("body").html(head+style+old);
+	window.print();
+	window.location.reload();
+}
+function download_exel(ee){
+	var v1,v2,v3,a,aa;
+	$(ee).find('button,input,select,.btn,.w3.btn').remove();
+	$(ee).find('td').each(function(a,aa){
+		v1=$(aa).text();
+		if(v1){
+			if(v1.indexOf('.')){$(aa).text(v1.replace('.',','));}
+		}
+	});
+	$(ee).find('tr').each(function(a,aa){if($(aa).is(':hidden')){$(aa).remove();}});
+	$('body').css({'background':'white'});
+	var old=$(ee).html();
+	$('body').html(old);
+	$('link').remove();
+	var csv =$('html').html();
+	var uri = 'data:text/html;charset=utf-8,' + encodeURIComponent(csv);
+	var download_link = document.createElement('a');
+	var caption='';
+	download_link.href = uri;
+	var ts = new Date().getTime();
+	if(caption==""){
+		download_link.download = ts+".xls";
+	} else {
+		download_link.download = caption+"-"+ts+".xls";
+	}
+	document.body.appendChild(download_link);
+	download_link.click();
+	document.body.removeChild(download_link);
+	window.location.reload();
+}
+
+String.prototype.turkishToUpper = function(){
+	var string = this;
+	var letters = { "i": "İ", "ş": "Ş", "ğ": "Ğ", "ü": "Ü", "ö": "Ö", "ç": "Ç", "ı": "I" };
+	string = string.replace(/(([iışğüçö]))/g, function(letter){ return letters[letter]; })
+	return string.toUpperCase();
+}
+function a_ck(e){
+modal_confirm('oturum kapat ? ?','çıkış?<br>çıkmak?? exit?','Çıkış',"window.location.href='"+e+"'");
+};
+function modal_confirm(title,data,btn_1,btn_1_islem){
+	var dat="<p>"+data+"</p>";
+	var btn1="<div onclick=\"javascript:"+btn_1_islem+";\" class='btn btn-danger'>"+btn_1+"</div>";
+	var btn2="<button onclick='javascript:modal_kapat();' class='btn btn_2' style='float:right;'>iptal</button></div>";
+	var htx=dat+btn1+btn2;
+	modal_ac(title,htx);
+	modal_mod1();
+}
+function tum_cokie_kontrol(){
+    var d = new Date();
+	var v1=d.getHours();
+	var v2=d.getMinutes();
+	if(v1 && v2 && v1==23 && v2==50){
+		$('#content').load('../html/loginlive.php?cokie_reset=1');
+	}
+}
+function resizeIframe(obj) {
+  obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+}
+function mesaj_goster(){
+/* 	modal_ac("Mesaj","sistem");
+	modal_load('../pages/chat.php'); */
+	$('#chat_box_loader').load('../pages/chat.php?');
+}
+
+function tmp_btn_ara_bx(t){
+var v1,v2,v3;
+	v1=$(t).closest('div[name=parent]').find('div[name=hide]');
+	if(v1.hasClass('w3-hide')){
+		v1.removeClass('w3-hide');
+		v1.addClass('w3-block');
+		v1.parent().addClass('w3-block');
+		$('.w3_finder_overlay').removeClass('w3-hide');
+	}else{
+		v1.removeClass('w3-block');
+		v1.addClass('w3-hide');
+		v1.parent().removeClass('w3-block');
+		$('.w3_finder_overlay').addClass('w3-hide');
+		//v1.find('div[name=finder]').html("");
+	}
+	
+}
+function t_form(t,id,v1,v2,func){
+var target="target_tmp_send_input";
+	if($(t).parent().find('#'+target).length == 0){
+		var v1_ar=v1.split('|');
+		var v2_ar=[];
+		var input='';
+
+		for(i=0;i<v1_ar.length;i++){
+			if(v1_ar[i]){
+				v2_ar=v1_ar[i].split('--');
+				if(v2_ar[1]){
+					input=input+"<"+v2_ar[0]+' class=\"form-control\" type=\"'+v2_ar[1]+'\">';
+				}
+			}
+		}
+		var iptal="<div class='btn bnt-md btn-danger w3-margin-2' onclick=\"javascript:$('#"+target+"').remove();\" >İptal</div>";
+		var send="<div class='btn bnt-md btn-primary w3-margin-2' onclick=\"javascript:t_form_send('#"+target+"','"+v2+"','"+id+"','"+func+"');\" >Gönder</div>";
+		input="<div id='"+target+"' class='panel panel-default'>"+input+send+iptal+'</div>';
+		$(t).parent().append(input);
+	}
+}
+function t_form_send(target,v2,id,func){
+var prm='';var i=0;
+	$(target).find('input').each(function(a,aa){
+		i++;
+		prm=prm+'v'+i+'='+$(this).val()+'&';
+	});
+	prm="../go.php?"+v2+'=1&id='+id+'&'+prm+"func="+$.base64Encode(func+"('"+id+"')");
+	$(target).load(prm);
+
+}
+function show_usr_ara(e,d){
+	modal_ac('Kullanıcı','Loading...');
+	modal_load('../go.php?ara_user_detay='+e+'&donem='+d+"&pat=../");
+	modal_mod1();
+	modal_size1();
+}
+
+function tmp_btn_ara_bx_keyup(t){
+var v1,v2,v3;
+	v1=$(t).val();
+	if(v1){
+		v1=v1.turkishToUpper();
+		v2=$(t).parent().find('div[name=finder]').load("../go.php?ara="+v1);
+	//v2=$(t).parent().find('div[name=finder]').load("xx");
+	//$('#arabox').load('go.php?ara='+$('input[name=ara]').val().turkishToUpper());
+	}
+}
+
+
+</script>
+<body>
+<div id='chat_box_loader'></div>
+<div id='global_yetki_d' class='w3-hide'></div>
+<!-- Modal -->
+<div id="modal" class='w3-modal w3-animate-top' style='position:fixed;' >
+    <!-- Modal content-->
+    <div class="w3-modal-content modal-body" style="top:-35px;"  >
+      <div class="no_pointer">
+        <button onclick="javascript:modal_kapat();" type="button" class="w3-red close" style='padding:5px!important;' data-dismiss="modal">&times;</button>
+        <h4 id='modal_head' class="w3-padding-1 w3-margin-1">Modal Header</h4>
+      </div>
+      <div id='modal_content'  class="container-fluid" style='max-height:70vh;overflow:auto!important;overflow-y:hidden;' >
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button  onclick="javascript:modal_kapat();" type="button" class="close btn btn-default w3-padding" >Close</button>
+      </div>
+    </div>
+</div>
+<div id='modal_overlay'></div>
+<div id='ara_box_overlay'></div>  
+<div id='tmp_ogrenci_opt' class='w3-hide'></div>
+<div id="loading_anim" ></div>
+
+<!-- Navbar -->
+<div class="w3-top golge" style='z-index:2;'>
+<a href="?d=0" class="card-4">
+	<img style='display:block;' class='w3-inline w3-logo w3-margin-2' src="../data/img/logo.min.png">
+	<div class='w3-inline' style='font-weight:bold;position:absolute;top:20px;font-size:1.20em;'></div>
+</a>
+<a href="#" onclick="javascript:a_ck('../login.php?logout=1');" class="w3-inline w3-button w3-float-1 w3-margin-2"><i class="w3-text-grey fa fa-2x fa-power-off"></i></a>
+<a href='help.php' class='w3-inline w3-button w3-float-1 w3-margin-2'><i class='w3-text-grey fa-2x fa fa-question'></i></a>
+
+ <div class="w3-bar w3-left-align w3-white">
+	<a href="?d=0" class="w3-bar-item w3-button" title="News"><i class="fa fa-home"></i></a>
+ 	<div class="w3-inline w3-dropdown-hover">
+    <button class="w3-button" title="Notifications"><i class="fa fa-pencil"></i><span>&nbsp;Rapor</span></button>     
+		<div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+		  <a href="?d=0" class="w3-bar-item w3-button">Not-Görüntüle</a>
+		  <a href="?d=yoklama_goruntule" class="w3-bar-item w3-button">Devamsızlık-Görüntüle</a>
+		</div>
+	</div>
+	
+ 	<div class="w3-inline w3-dropdown-hover">
+    <button class="w3-button" title="Notifications"><i class="fa fa-sort-amount-asc"></i><span>&nbsp;İşlem</span></button>     
+		<div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+
+		</div>
+	</div>
+
+ 	<div class="w3-inline w3-dropdown-hover">
+    <button class="w3-button" title="Notifications"><i class="fa fa-gear"></i><span>Hesap</span></button>     
+		<div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+				  <div class='no_pointer' style='font-size:0.9em;color:rgb(202,202,202);margin-left:10px;' ></div>
+                  <a class='w3-bar-item w3-button' href="?d=hesap_bilgileri">Hesap-Bilgileri</a>
+                  <a class='w3-bar-item w3-button' href='#' onclick="javascript:func_profil_resmi();">Profil-Resmi</a>
+                  <a class='w3-bar-item w3-button' href="../login.php?logout=1">Çıkış</a>
+		</div>
+	</div>
+	
+	<div class="w3-float-1 w3-button w3-inline" onclick="javascript:date_ajanda_goster();" ><i class='fa fa-calendar-o' ></i></div>
+    <button onclick="javascript:mesaj_goster();" class="w3-button w3-float-1" title="Notifications"><i class="fa fa-envelope w3-text-red" ></i></button>     
+	<div name='parent' class='w3-float-1 w3-inline' >
+		<div onclick="javascript:tmp_btn_ara_bx(this);" class='w3-button' >Ara:<i class="fa fa-search fa-fw" ></i></div>
+		<div name='hide' class='w3-hide w3-float-1' style='width:80%;'>
+			<div onclick="javascript:tmp_btn_ara_bx(this);" class='btn btn-sm btn-danger w3-float-1'>X</div>
+			<input onkeyup="javascript:tmp_btn_ara_bx_keyup(this);" type='text' class='form-control btn-sm' value='' placeholder="isim,numara.." style="width:80%;" >
+			<div name='finder' class='w3-block w3-card w3-golge w3-bold w3-light-grey' ></div>
+		</div>
+	</div>
+	
+ </div>
+</div>
+<div class='w3_finder_overlay w3-hide'>.</div>
+<!-- Navbar on small screens -->
+
+
+<!-- Page Container -->
+<div class="w3-container" style="margin:auto;max-width:1250px;padding-top:120px">
+
+
+  
+<!-- End Page Container -->
+</div>
+<br>
+
+<button onclick="topFunction()" id="myBtn" class='w3-padding-3 w3-animate-right' style="font-size:1.72em;">&uArr;</button>
+<button onclick="topFunction_d()" id="myBtn2" class='w3-padding-3 w3-animate-right' style="font-size:1.72em;">&dArr;</button>
+
+<footer style="background:rgba(140,153,170,0.3);margin-top:100px;" class='w3-padding no_pointer w3-text-grey'>
+<div style="height:3px;" class='w3-gray w3-block'></div>
+<div class='w3-margin w3-padding w3-center w3-block'></div>
+</footer>
+
+<script charset="utf-8" type="text/javascript" language="javascript">
+window.onscroll=function(){scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 990 || document.documentElement.scrollTop > 990) {
+        $("#myBtn,#myBtn2").show();
+		$("#mychatboxclass").hide();
+    } else {
+         $("#myBtn,#myBtn2").hide();
+		 $("#mychatboxclass").show();
+    }
+}
+function topFunction_d() {
+    document.body.scrollTop = $(document).height(); // For Chrome, Safari and Opera 
+    document.documentElement.scrollTop = $(document).height(); // For IE and Firefox
+}
+function topFunction() {
+    document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+    document.documentElement.scrollTop = 0; // For IE and Firefox
+}
+
+
+
+function func_profil_resmi(){
+htm="<div class='' id='img_load'></div>";
+modal_ac('Dialog',htm);
+$('#img_load').load('go.php?load_resim=1');
+}
+
+
+
+
+
+function bugun(zaman) {
+  //var zaman = new Date();
+  var aylar = new Array('01','02','03','04','05','06','07','08','09','10','11','12');
+  var tarih = ((zaman.getDate()<10) ? "0" : "")+ zaman.getDate();
+  function cevir(number) {
+    return (number < 1000) ? number + 1900 : number;
+  }
+  var bugun =  (cevir(zaman.getYear())) + "-" +aylar[zaman.getMonth()]+ "-" + tarih;
+  return bugun;
+}
+function sc_pad(num, size){var s = parseInt(num)+"";while (s.length < size){s = "0" + s;};return s;}
+function date_conv(date){date=date.split('.');date=date[2]+'-'+sc_pad(date[1],2)+'-'+sc_pad(date[0],2);return date;};
+function con_date(e){var de;
+	switch(e){
+		case 'Ocak':de=1;break;
+		case 'Şubat':de=2;break;
+		case 'Mart':de=3;break;
+		case 'Nisan':de=4;break;
+		case 'Mayıs':de=5;break;
+		case 'Haziran':de=6;break;
+		case 'Temmuz':de=7;break;
+		case 'Ağustos':de=8;break;
+		case 'Eylül':de=9;break;
+		case 'Ekim':de=10;break;
+		case 'Kasım':de=11;break;
+		case 'Aralık':de=12;break;
+	}
+	return de;
+}
+
+function date_ajanda_goster(){
+	var now_date=bugun(new Date());
+	var btn_ekle1='<div  id=\'id_btn_calendar_1\' onclick=\"javascript:func_ekle_new_calenda_event(\''+now_date+'\');\" class=\'btn w3-teal w3-hover-white w3-border\'>Ekle</div>';
+	var ara="<div class='w3-card w3-padding' style='max-width:200px;min-height:200px;' ><div class='w3-light-grey img-rounded'>Events</div><div id='tmp_id_events' class='w3-padd'>"+now_date+"</div>"+btn_ekle1+"</div>";
+	var htm1="<div id='tmp_calendar_modal_div2' class='d-hide'></div>";
+	var htm2="<div id='tmp_calendar_modal_div1'><div id='datetimepicker12' class='w3-card w3-inline w3-padding'  ></div>"+ara+"</div>";
+	var htm3="<div id='tmp_calendar_modal_div3' class='d-hide'></div>";
+	modal_ac("Kullanıcı","Loading...");
+	$('#modal_content').html(htm1+htm2+htm3+'<div id=\'tmp_calendar_data_events\' class=\'w3-hide\'></div>');
+	setTimeout(function(){
+		$('#datetimepicker12').datepicker({
+		 inline: true
+		 ,sideBySide: true
+		 ,format: 'DD/MM/YYYY'
+		 ,'language': 'tr'
+		 ,'weekStart': 1
+		 ,'maxViewMode': 0
+		 ,'todayBtn': true
+		 ,'multidate': false
+		 ,'daysOfWeekHighlighted': "0,6"}
+		).on('changeDate', function(ev) {date_pick();
+			$('#id_btn_calendar_1').hide();
+			var eev=$(this).find('.datepicker .datepicker-days table tbody tr .active').html();
+			var tmp_e=$('#datetimepicker12 .datepicker .datepicker-days table thead tr .datepicker-switch').text().split(' ');
+			var t_date=tmp_e[1]+'-'+sc_pad(con_date(tmp_e[0]),2)+'-'+sc_pad(eev,2);
+			var evets=event_varsa_ekle(t_date);
+			var btn_ekle='<div  onclick=\"javascript:func_ekle_new_calenda_event(\''+t_date+'\');\" class=\'btn w3-teal w3-hover-white w3-border\'>Ekle</div>';
+			eev=$(this).parent().find('div #tmp_id_events').html(t_date+'<div class=\'w3-row\'>'+evets+'</div>'+btn_ekle);
+	}).on("changeMonth", function(e){
+		setTimeout(function(){date_pick();},100);
+	date_pick();});
+	
+	date_pick();
+	},255);
+$('#tmp_calendar_data_events').load('../go.php?calendar_get_events=1');
+};
+function event_varsa_ekle(e){
+	var obj='.tmp_event'+e;
+	var ht='';
+	if($(obj).length){
+	$(obj).each(function(a,aa){
+		ht=ht+'<div class=\'btn btn-primary w3-hover-red w3-light-grey w3-border \' onclick=\"javascript:tmp_func_calendar_show_event(\''+$(this).attr('data-id')+'\');\">'+$(this).attr('data-val_1')+'&nbsp;&nbsp;'+$(this).attr('data-val_2')+'&nbsp;&nbsp;<b>'+$(this).attr('data-val_3')+'</b></div>';
+	});
+	return ht;
+	}else{return '';}
+}
+function tmp_func_calendar_show_event(e){
+	$('#tmp_calendar_modal_div1').hide();$('#tmp_calendar_modal_div3').show();
+	var obj='.class_id_'+e;var htm='';var cls='w3-block btn';
+	if($(obj).length==1){
+		var btn="<div style='float:right;' onclick=\"javascript:calendar_function_sil('"+$(obj).attr('data-id')+"');\" class='btn btn-danger'>Sil</div>";
+		var geri="<div style='float:left;' onclick=\"javascript:calendar_function_ekle_geri();\" class='btn btn-default'>Geri</div>"+btn;
+		htm='<div class=\''+cls+'\'><b>Tarih:</b>&nbsp;'+$(obj).attr('data-date')+'</div><div class=\''+cls+'\'><b>Başlık:</b>&nbsp;'+$(obj).attr('data-val_1')+'</div><div class=\''+cls+'\'><b>Açıklama:</b>&nbsp;'+$(obj).attr('data-val_2')+'</div><div class=\''+cls+'\'><b>Kategori:</b>&nbsp;'+$(obj).attr('data-val_3')+'</div>';}
+	$('#tmp_calendar_modal_div3').html(geri+'<div class=\'w3-padd w3-block\'>'+htm+'<div>');
+}
+function calendar_function_sil(e){
+	$.ajax({
+	type:"GET"
+	,url:"../go.php"
+	,data:{'calendar_sil_event':'','id':e}
+	,success: function(e){msg_("<h3>Başarılı</h3>");}
+	});
+}
+function func_ekle_new_calenda_event(e){
+	var select="<div class='w3-padd'><select name='damit_kategori' style='width:auto;' class='form-control w3-inline'><option selected>Kategorisiz</option><option>Resmi Tatil</option><option>Önemli</option><option>Özel</option><option>Sınav</option></select></div>";
+	var input1="<div class='w3-padd'><label class='w3-padd w3-left-align'>Başlık:</label><input type='text' name='calendar_title' class='form-control'></div>";
+	var input2="<div class='w3-padd'><label class='w3-padd w3-left-align'>Detay:</label><input type='text' name='calendar_detay' class='form-control'></div>";
+	var date="<div class='w3-padd w3-left-align'>Tarih:<input type='text' value='"+e+"' name='calendar_date' class='btn w3-padd' disabled></div>";
+	var btn="<div class='form-control btn btn-danger' onclick=\"javascript:calendar_function_ekle_ok();\">Kaydet</div>";
+	var geri="<div style='float:left;' onclick=\"javascript:calendar_function_ekle_geri();\" class='w3-margin btn btn-default'>Geri</div>";
+$('#tmp_calendar_modal_div2').show().html(geri+"<div class='well no_pointer'>EVENT-EKLEME</div><div class='form-group'></div><div class=\'w3-border img-rounded w3-padding \'>"+date+input1+input2+select+btn+"</div>");
+$('#tmp_calendar_modal_div1').hide();
+}
+function calendar_function_ekle_ok(){
+var v1=$('input[name=calendar_title]').val();var v2=$('input[name=calendar_detay]').val();var date=$('input[name=calendar_date]').val();
+var v3=$('select[name=damit_kategori]').val();
+if(v1 !=='' && date !==''){
+	$.ajax({
+	type:"GET"
+	,url:"../go.php"
+	,data:{'calendar_ekle_event':'','date':date,'v1':v1,'v2':v2,'v3':v3}
+	,success: function(e){msg_("<h3>Başarılı</h3>");}
+	});
+}else{$('#tmp_calendar_modal_div2').prepend('<div class="alert alert_nameusr alert-danger"><a href="#" class="close" data-dismiss="alert">×</a>Boş alanlar</div>');}
+}
+function calendar_function_ekle_geri(){
+$('#tmp_calendar_modal_div2,#tmp_calendar_modal_div3').hide();$('#tmp_calendar_modal_div1').show();	
+}
+function date_pick(){
+	var tmp_e=$('#datetimepicker12 .datepicker .datepicker-days table thead tr .datepicker-switch').text().split(' ');
+	var t_date=sc_pad(con_date(tmp_e[0]),2);
+	var eventDate = $('.datepicker').val();
+	$('.day').each(function(e,ee){
+		if(!$(this).hasClass('old') && !$(this).hasClass('new')){
+		var dd=tmp_e[1]+'-'+t_date+'-'+sc_pad($(this).html(),2);
+		var obj='.tmp_event'+dd;
+		if($(obj).length){$(this).addClass('event_d');}
+		}
+	});
+}
+$('#tmp_ogrenci_opt').load('go.php?load_ogrenci_opt=1');
+
+$('#btn_menu_togle').click(function(){
+	
+	if($('#menu_yan_content').text()==''){
+		var htm=$('ul.navbar-nav').html();
+		$('#menu_yan_content').html(htm);
+		}
+	$('#menu_yan').show();
+	$('#menu_yanoverlay').show();
+});
+$('.close,#menu_yanoverlay').click(function(){
+	$('#menu_yan').hide();
+	$('#menu_yanoverlay').hide();
+});
+
+
+if ($(window).width() < 750) {
+	$('#btn_menu_togle').css({'display':'inline-block'});
+	$('.nav.navbar-nav').hide();
+}else {
+	$('#btn_menu_togle').css({'display':'none'});
+	$('.nav.navbar-nav').show();
+	}
+
+$(window).on('resize', function() {
+        if ($(window).width() < 750) {
+            $('#btn_menu_togle').css({'display':'inline-block'});
+			$('.nav.navbar-nav').hide();
+        } else {
+            $('#btn_menu_togle').css({'display':'none'});
+			$('.nav.navbar-nav').show();
+        }
+});
+
+$('.w3-check').css({'width':'27px','height':'27px','position':'relative','border-radius':'2px','border':'2px solid rgba(0,0,0,.54)','-webkit-transition':'all .4s cubic-bezier(.25,.8,.25,1)','transition':'all .4s cubic-bezier(.25,.8,.25,1)'});
+
+
+
+setInterval(function(){
+if($.active > 0){loading_ac();}else{loading_kapat();}
+},1100);
+
+$('.w3_finder_overlay').click(function(){
+	//$('div[name=finder]').parent().removeClass('w3-block');
+	$('div[name=finder]').parent().find('.btn').click();
+	$('.w3_finder_overlay').addClass('w3-hide');
+	
+});
+
+</script>
+
+</body>
+
+</html> 
